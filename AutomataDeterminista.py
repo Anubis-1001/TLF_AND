@@ -63,7 +63,7 @@ def get_tabla_det(tablaOriginal):
     
     
     automataDeterminista.append(nueva_fila)
-    while ( idx_fila < len(automataDeterminista) and idx_fila < 7):
+    while ( idx_fila < len(automataDeterminista) ):
             
             for nodo in automataDeterminista[idx_fila][1:]:
                 
