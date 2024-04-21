@@ -63,7 +63,7 @@ def get_tabla_det(tablaOriginal):
     
     
     automataDeterminista.append(nueva_fila)
-    while ( idx_fila < len(automataDeterminista) and idx_fila < 7):
+    while ( idx_fila < len(automataDeterminista) ):
             
             for nodo in automataDeterminista[idx_fila][1:]:
                 
@@ -88,20 +88,31 @@ def imprimir_solucion(tabla):
     print()
           
 
-imprimir_solucion( [ [".", "A", "B"],
-                      ["q0", "{q1, q3}", "---"],
-                      ["q1", "{q1, q2}", "---"],
-                      ["q2", "---", "---"],
-                      ["q3", "q4", "q3"],
-                      ["q4", "---", "---"],
-    ])
+#imprimir_solucion( [ [".", "A", "B"],
+#                      ["q0", "{q1, q3}", "---"],
+#                      ["q1", "{q1, q2}", "---"],
+#                      ["q2", "---", "---"],
+#                      ["q3", "q4", "q3"],
+#                      ["q4", "---", "---"],
+#    ])
+#
+#
+#
+#
+#imprimir_solucion( [ [".", "A",     "B",   "C"],
+#                       ["p", "q",     "---", "---"],
+#                       ["q", "p,r,s", "p,r", "s"],
+#                       ["r", "---",   "p,s", "r,s"],
+#                       ["s", "---",   "---", "r"]
+#    ])
 
 
+filas = int(input())
 
+entrada = []
+for _ in range(0, filas):
+    fila = input()
+    fila = re.split(r'\s*,\s+', re.sub(r'\[|\]|\{|\}', '', fila))
+    entrada.append(fila)
 
-imprimir_solucion( [ [".", "A",     "B",   "C"],
-                       ["p", "q",     "---", "---"],
-                       ["q", "p,r,s", "p,r", "s"],
-                       ["r", "---",   "p,s", "r,s"],
-                       ["s", "---",   "---", "r"]
-    ])
+imprimir_solucion(entrada)
